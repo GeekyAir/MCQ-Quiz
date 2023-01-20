@@ -1,0 +1,117 @@
+*{
+    font-family:Georgia, 'Times New Roman', Times, serif !important;
+
+}
+body{
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(238, 238, 21) 0%, rgba(225, 5, 34, 0) 70%)  , linear-gradient(135deg, rgb(23, 3, 97) 10%, rgba(49, 5, 209, 0) 80%) , linear-gradient(225deg, rgb(104, 243, 241) 10%, rgba(10, 219, 216, 0) 80%), rgba(0, 0, 0, 0) linear-gradient(315deg, rgb(54, 165, 128) 100%, rgba(9, 245, 5, 0) 70%);
+}
+.header>h1{
+    width: 50% !important;
+    
+}
+.grad-h1{
+	background: linear-gradient(to right, #ecdd07ea 0%, #f17a19 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	
+}
+.setting-box, .quiz-box , .finish-box{
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3)
+}
+label{
+    font-size: 20px;
+    color: rgb(23, 3, 97);
+    
+}
+::placeholder{
+    color: black !important;
+}
+select , [type="number"]{
+    background-color: transparent !important;
+}
+select option{
+    background-color: transparent !important;
+}
+#startBtn{
+    color: rgb(23, 3, 97);
+
+}
+.error{
+    color: rgba(167, 4, 4, 0.945);
+    font-size: 14px;
+    display: none;
+}
+#setting{
+    /* display: none; */
+}
+#quiz{
+    display: none;
+}
+#question , #Q , .noq{
+    color: rgb(23, 3, 97);
+}
+.quiz-title{
+    background: linear-gradient(to right, #fcf158ea 0%, #f17a19 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 40px;
+}
+#finish{
+    display: none;
+}
+#Correct , #inCorrect{
+    display: none;
+}
+// SASS Variables.
+$text: #fff;
+$link: #e34234;
+$link-hover: #ba160c;
+$background: #00356B;
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+	background: $background
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%,-50%);
+	color: $text;
+	max-width: 90%;
+	padding: 2em 3em;
+	background: rgba(0, 0, 0, 0.4);
+	text-shadow: 0px 0px 2px #131415;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 2.25em;
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+
+a,
+a:visited {
+	color: $link;
+	transition: 0.25s;
+}
+
+a:hover,
+a:focus {
+	color: $link-hover;
+}

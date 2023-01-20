@@ -1,2 +1,3 @@
-# MCQ-Quiz
-Quiz Application using HTML , CSS ,Bootstrap , API , JavaScript and jQuery
+# Quiz-APP
+Quiz Application using HTML , CSS ,Bootstrap ,  JavaScript and jQuery 
+https://salmadarwish.github.io/Quiz-APP/

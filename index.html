@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <!--  CSS   -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/particles.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="awesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--   CSS  -->
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HTML, CSS, javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- Meta Tags -->
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+    <section id="setting">
+      <div class="container py-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="setting-box w-75">
+            <div
+              class="header d-flex justify-content-center align-items-center"
+            >
+              <h1 class="bg-white text-center py-3 grad-h1 fw-bolder">
+                Setting Your Quiz
+              </h1>
+            </div>
+            <div class="row mx-2">
+              <div class="form">
+                <label for="category" class="fw-bolder">Category</label>
+                <select
+                  id="category"
+                  class="form-control my-3 mx-1"
+                  name="category"
+                  placeholder="Choose Your Category"
+                >
+                  <option value="" disabled selected>
+                    Select your category
+                  </option>
+                  <option value="27">Animals</option>
+                  <option value="26">Celebrities</option>
+                  <option value="10">Entertainment: Books</option>
+                  <option value="11">Entertainment: Film</option>
+                  <option value="12">Entertainment: Music</option>
+                  <option value="15">Entertainment: Video Games</option>
+                  <option value="16">Entertainment: Borad Games</option>
+                  <option value="9">General Knowledge</option>
+                  <option value="22">Geography</option>
+                  <option value="23">History</option>
+                  <option value="28">Vehicles</option>
+                  <option value="17">Science & Nature</option>
+                  <option value="18">Science: Computers</option>
+                  <option value="21">Sports</option>
+                </select>
+                <p class="error fw-bold mx-1" id="catError">
+                  Please Select Your Category
+                </p>
+                <label for="difficulty" class="fw-bolder pb-2"
+                  >Difficulty</label
+                >
+                <div class="form-check mb-3" id="difficulty">
+                  <div class="form-check-label mx-2">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      id="easy"
+                      name="easy"
+                      value="easy"
+                      checked
+                    />Easy
+                  </div>
+                  <div class="form-check-label mx-2">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      id="medium"
+                      name="medium"
+                      value="medium"
+                    />Medium
+                  </div>
+                  <div class="form-check-label mx-2">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      id="hard"
+                      name="hard"
+                      value="hard"
+                    />Hard
+                  </div>
+                </div>
+                <label for="numberOfQuestions" class="fw-bolder pb-2"
+                  >Number of Questions</label
+                >
+                <input
+                  type="number"
+                  class="form-control my-2 mx-1 mb-3"
+                  id="numberOfQuestions"
+                  placeholder="Number of Questions"
+                  required
+                  min="1"
+                  max="50"
+                />
+                <p class="error fw-bold mx-1" id="numError">
+                  Please enter number of question between 1 and 50
+                </p>
+
+                <button
+                  id="startBtn"
+                  class="btn float-end py-2 px-4 bg-white rounded-pill my-4 fw-bold"
+                >
+                  Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="quiz">
+      <div class="container py-5">
+        <div class="row mt-5 justify-content-center align-items-center">
+          <div
+            class="quiz-box w-75 justify-content-center align-items-center py-3"
+          >
+            <div
+              class="header d-flex justify-content-center align-items-center"
+            >
+              <h1 class="text-center py-3 quiz-title fw-bolder d-block">
+                Quiz
+              </h1>
+            </div>
+            <span
+              class="float-end rounded-pill text-black p-2 bg-white mb-3 fw-bold noq"
+            >
+              <span id="currentQuestion"></span>
+              Of
+              <span id="totalNumberOfQuestions"></span>
+              Questions
+            </span>
+            <span id="inCorrect" class="btn btn-danger float-left disabled"
+              >InCorrect</span
+            >
+            <span id="Correct" class="btn btn-success float-left disabled"
+              >Correct</span
+            >
+
+            <div class="question-box text-center w-75 mx-auto mb-5 mt-4">
+              <span id="Q" class="text-center fw-bolder fs-2">Q : </span>
+              <h5 id="question" class="text-center fw-bolder d-inline"></h5>
+            </div>
+            <div id="answerBox" class="mb-3"></div>
+            <button
+              id="nextBtn"
+              class="btn float-end py-2 px-4 bg-white rounded-pill my-4 fw-bold"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="finish">
+      <div class="container py-5">
+        <div class="row mt-5 justify-content-center align-items-center">
+          <div class="finish-box w-75 py-3">
+            <div class="row">
+                <p class="text-center fs-2  w-100 mx-auto">
+              Your Score is <span id="score" class="text-success fs-1"></span>
+            </p> 
+            </div>
+            <div class="row justify-content-center">
+               <button id="tryAgain" class="btn py-2 px-4 bg-white rounded-pill my-4 fw-bold text-center w-auto">
+              Try Again
+            </button> 
+            </div>
+           
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/particles.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
